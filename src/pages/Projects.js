@@ -10,11 +10,12 @@ function Projects() {
           {/* Placeholder for future project cards */}
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-gray-700 p-4 rounded-lg shadow-md hover:scale-105 transition duration-300">
-              <h2 className="text-xl font-semibold text-blue-300">Project 1</h2>
-              <p className="text-gray-400">A responsive web app built with React and Tailwind CSS.</p>
+              <h2 className="text-xl font-semibold text-blue-300">marketplace</h2>
+              <p className="text-gray-400">A responsive web app marketplace where web devs post their projects for sale and meet potential clients.</p>
+              <a href="https://moringa-marketplace-3bpi.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">View on Vercel</a>
             </div>
             <div className="bg-gray-700 p-4 rounded-lg shadow-md hover:scale-105 transition duration-300">
-              <h2 className="text-xl font-semibold text-blue-300">Project 2</h2>
+              <h2 className="text-xl font-semibold text-blue-300">Project comming soon</h2>
               <p className="text-gray-400">A full-stack application using Node.js and MongoDB.</p>
             </div>
           </div>
