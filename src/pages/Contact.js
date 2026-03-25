@@ -1,46 +1,34 @@
-// function Contact() {
-//   return (
-//     <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white p-8">
-//       <div className="max-w-3xl bg-gray-800 bg-opacity-90 backdrop-blur-lg shadow-xl rounded-lg p-6">
-//         <h1 className="text-4xl font-bold text-blue-400 text-center mb-4">📞 Get in Touch</h1>
-//         <p className="text-lg text-gray-300 text-center">
-//           I’m **open to opportunities** and would love to **connect**!
-//         </p>
-
-//         <div className="mt-6 text-center">
-//           <p className="text-lg text-gray-300">
-//             📞 <strong>Phone:</strong> <a href="tel:+254740279346" className="text-blue-400 hover:underline">+254 740 279 346</a>
-//           </p>
-//           <p className="text-lg text-gray-300">
-//             📧 <strong>Email:</strong> <a href="mailto:elvisotieno24@gmail.com" className="text-blue-400 hover:underline">elvisotieno24@gmail.com</a>
-//           </p>
-//         </div>
-
-//         <h2 className="text-2xl font-semibold text-blue-400 text-center mt-6">🌐 Connect with Me</h2>
-//         <div className="mt-4 flex flex-wrap justify-center gap-4">
-//           <a href="https://www.linkedin.com/in/elvis-elly-0367ab166" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
-//             LinkedIn
-//           </a>
-//           <a href="https://www.instagram.com/elviselly7100" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition duration-300">
-//             Instagram
-//           </a>
-//           <a href="https://www.facebook.com/elvis.elly.7923" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-blue-700 text-white rounded-lg shadow-md hover:bg-blue-800 transition duration-300">
-//             Facebook
-//           </a>
-//           <a href="https://www.github.com/Elviselly2" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-700 text-white rounded-lg shadow-md hover:bg-gray-800 transition duration-300">
-//             GitHub
-//           </a>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Contact;
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-emailjs.init("6pN7uSUcpDtCd-8ml"); // Your public key
+emailjs.init("6pN7uSUcpDtCd-8ml");
+
+const socialLinks = [
+  {
+    icon: "📧",
+    label: "Email",
+    value: "elvisotieno24@gmail.com",
+    href: "mailto:elvisotieno24@gmail.com",
+  },
+  {
+    icon: "💼",
+    label: "LinkedIn",
+    value: "Elvis Otieno",
+    href: "https://www.linkedin.com/in/elviselly",
+  },
+  {
+    icon: "🐙",
+    label: "GitHub",
+    value: "Elviselly2",
+    href: "https://github.com/Elviselly2",
+  },
+  {
+    icon: "📞",
+    label: "Phone",
+    value: "+254 740 279 346",
+    href: "tel:+254740279346",
+  },
+];
 
 function Contact() {
   const form = useRef();
@@ -50,7 +38,6 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
-
     emailjs
       .sendForm("service_s08jkto", "template_shxv9k8", form.current)
       .then(
@@ -68,113 +55,93 @@ function Contact() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white p-8">
-      <div className="max-w-3xl w-full bg-gray-800 bg-opacity-90 backdrop-blur-lg shadow-xl rounded-lg p-8">
-        <h1 className="text-4xl font-bold text-blue-400 text-center mb-4">📞 Get in Touch</h1>
-        <p className="text-lg text-gray-300 text-center mb-8">
-          I’m <strong>open to opportunities</strong> and would love to <strong>connect</strong>!
-        </p>
+    <section className="min-h-screen bg-gray-50 py-20 px-8 text-gray-800">
+      <div className="max-w-3xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-extrabold text-emerald-700 mb-3">Contact Me</h1>
+          <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full mb-4"></div>
+          <p className="text-gray-500 text-lg">
+            If you'd like to collaborate, ask a question, or connect — I'd love to hear from you.
+          </p>
+        </div>
+
+        {/* Social Links Grid */}
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-10">
+          <div className="grid md:grid-cols-2 gap-4">
+            {socialLinks.map(({ icon, label, value, href }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-xl bg-emerald-50 border border-emerald-100 hover:bg-emerald-100 transition group"
+              >
+                <div className="w-10 h-10 rounded-full bg-emerald-700 flex items-center justify-center text-white text-lg flex-shrink-0">
+                  {icon}
+                </div>
+                <div>
+                  <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide">{label}</p>
+                  <p className="text-emerald-700 font-medium text-sm group-hover:underline">{value}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <p className="text-center text-emerald-600 text-sm mt-6 font-medium">
+            I usually respond within 24–48 hours. Let's connect!
+          </p>
+        </div>
 
         {/* Contact Form */}
-        <form ref={form} onSubmit={sendEmail} className="space-y-6">
-          <div>
-            <label className="block text-gray-300 mb-2 font-medium">Full Name</label>
-            <input
-              type="text"
-              name="from_name"
-              required
-              className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="Enter your full name"
-            />
-          </div>
-
-          <div>
-            <label className="block text-gray-300 mb-2 font-medium">Email Address</label>
-            <input
-              type="email"
-              name="from_email"
-              required
-              className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="Enter your email"
-            />
-          </div>
-
-          <div>
-            <label className="block text-gray-300 mb-2 font-medium">Message</label>
-            <textarea
-              name="message"
-              rows="4"
-              required
-              className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white focus:ring-2 focus:ring-blue-500 outline-none resize-none"
-              placeholder="Write your message..."
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            disabled={loading}
-            className={`w-full py-3 font-semibold rounded-lg shadow-md transition duration-300 ${
-              loading
-                ? "bg-gray-600 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-600 text-white"
-            }`}
-          >
-            {loading ? "Sending..." : "Send Message"}
-          </button>
-        </form>
-
-        {status && <p className="text-center mt-4 text-green-400 font-medium">{status}</p>}
-
-        <div className="mt-10 text-center space-y-2">
-          <p className="text-lg text-gray-300">
-            📞 <strong>Phone:</strong>{" "}
-            <a href="tel:+254740279346" className="text-blue-400 hover:underline">
-              +254 740 279 346
-            </a>
-          </p>
-          <p className="text-lg text-gray-300">
-            📧 <strong>Email:</strong>{" "}
-            <a href="mailto:elvisotieno24@gmail.com" className="text-blue-400 hover:underline">
-              elvisotieno24@gmail.com
-            </a>
-          </p>
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Send a Message</h2>
+          <form ref={form} onSubmit={sendEmail} className="space-y-5">
+            <div>
+              <label className="block text-gray-600 text-sm font-semibold mb-1">Full Name</label>
+              <input
+                type="text"
+                name="from_name"
+                required
+                placeholder="Enter your full name"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-600 text-sm font-semibold mb-1">Email Address</label>
+              <input
+                type="email"
+                name="from_email"
+                required
+                placeholder="Enter your email"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-600 text-sm font-semibold mb-1">Message</label>
+              <textarea
+                name="message"
+                rows="4"
+                required
+                placeholder="Write your message..."
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-gray-50 text-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-400 transition resize-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className={`w-full py-3 rounded-lg font-bold text-white transition duration-200 ${
+                loading ? "bg-gray-400 cursor-not-allowed" : "bg-emerald-700 hover:bg-emerald-800"
+              }`}
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+          {status && (
+            <p className="text-center mt-4 font-medium text-emerald-600">{status}</p>
+          )}
         </div>
 
-        <h2 className="text-2xl font-semibold text-blue-400 text-center mt-8">🌐 Connect with Me</h2>
-        <div className="mt-4 flex flex-wrap justify-center gap-4">
-          <a
-            href="https://www.linkedin.com/in/elvis-elly-0367ab166"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://www.instagram.com/elviselly7100"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-pink-500 text-white rounded-lg shadow-md hover:bg-pink-600 transition duration-300"
-          >
-            Instagram
-          </a>
-          <a
-            href="https://www.facebook.com/elvis.elly.7923"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-blue-700 text-white rounded-lg shadow-md hover:bg-blue-800 transition duration-300"
-          >
-            Facebook
-          </a>
-          <a
-            href="https://www.github.com/Elviselly2"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-gray-700 text-white rounded-lg shadow-md hover:bg-gray-800 transition duration-300"
-          >
-            GitHub
-          </a>
-        </div>
       </div>
     </section>
   );

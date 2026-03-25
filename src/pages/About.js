@@ -1,172 +1,152 @@
-// function About() {
-//     return (
-//       <section className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black text-white p-8">
-//         <div className="max-w-3xl bg-gray-800 bg-opacity-90 backdrop-blur-lg shadow-xl rounded-lg p-6">
-//           <h1 className="text-4xl font-bold text-blue-400 text-center mb-4">About Me</h1>
-//           <p className="text-lg leading-relaxed text-gray-300">
-//             Hi, I’m <span className="font-semibold text-blue-500">Elvis</span>, a passionate and dedicated **Full-Stack Developer in training**, with a strong foundation in front-end development.  
-//             Having completed my front-end training at **Moringa School**, I specialize in **HTML, CSS, JavaScript, React, Tailwind CSS, and Git**, crafting responsive and interactive web applications.
-//           </p>
-
-//           <div className="mt-6">
-//             <h2 className="text-2xl font-semibold text-blue-400">💻 Hands-on Experience</h2>
-//             <p className="text-lg leading-relaxed text-gray-300">
-//               I've gained valuable hands-on experience as an **attaché at Kibabii University**, where I honed my technical skills in a real-world environment.  
-//               Currently, I'm diving deeper into **back-end technologies**, working toward becoming a fully skilled **Full-Stack Developer**.
-//             </p>
-//           </div>
-
-//           <div className="mt-6">
-//             <h2 className="text-2xl font-semibold text-blue-400">🚀 Soft Skills & Growth</h2>
-//             <p className="text-lg leading-relaxed text-gray-300">
-//               Beyond coding, I have developed essential **soft skills** like **communication, teamwork, self-leadership, and productivity** through personal development courses at the **African Management Institute**.  
-//               These skills enable me to collaborate effectively and contribute meaningfully to any team.
-//             </p>
-//           </div>
-
-//           <div className="mt-6 text-center">
-//             <h2 className="text-2xl font-semibold text-blue-400">📢 Open to Opportunities</h2>
-//             <p className="text-lg leading-relaxed text-gray-300">
-//               I am now open to **internship opportunities**, where I can apply my front-end expertise, continue mastering back-end development, and grow through mentorship and teamwork.  
-//               If you're looking for a **motivated and eager developer** to join your team, let's connect!
-//             </p>
-//           </div>
-
-//           <div className="mt-6 text-center">
-//             <a 
-//               href="/contact" 
-//               className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-600 hover:scale-105 transition duration-300"
-//             >
-//               📩 Contact Me
-//             </a>
-//           </div>
-//         </div>
-//       </section>
-//     );
-// }
-
-// export default About;
 function About() {
-    return (
-      // Updated Background: Deeper, less noisy gradient with a subtle texture feel
-      <section className="flex flex-col items-center justify-center min-h-screen bg-gray-950 text-white p-8">
-        
-        {/* Main Container: Larger max-width, increased padding, premium frosted glass effect */}
-        <div className="max-w-5xl w-full bg-gray-800/80 backdrop-blur-xl shadow-2xl rounded-2xl p-10 border border-gray-700/50">
-          
-          {/* Heading: Slightly larger and more vibrant */}
-          <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 text-center mb-10 tracking-tighter">
-            A Bit About Elvis
-          </h1>
-          
-          {/* Introduction & Value Proposition: Clean border, slightly larger text */}
-          <div className="mb-10 p-5 border-l-4 border-cyan-500 bg-gray-700/30 rounded-r-lg">
-            <p className="text-xl leading-relaxed text-gray-200">
-              Hello! I'm **Elvis Otieno**, a dedicated **Full-Stack Developer** focused on building efficient, scalable, and responsive web applications. My comprehensive background in **ICT** and specialized training ensure I approach development with both technical depth and practical expertise across the entire computing stack.
-            </p>
-          </div>
+  const toolkit = ["VS Code", "GitHub", "React", "Tailwind CSS", "Node.js", "Python/Flask", "PostgreSQL", "MongoDB", "SQLite"];
 
-          {/* Grid Layout: Consistent gap and structure */}
-          <div className="grid lg:grid-cols-3 gap-8">
-            
-            {/* Technical Foundation (RVTTI Diploma and Skills Highlighted) */}
-            <div className="p-6 bg-gray-700/50 rounded-lg shadow-inner border border-gray-600">
-              <h2 className="text-2xl font-bold text-cyan-400 mb-4 flex items-center">
-                <span role="img" aria-label="code" className="text-3xl mr-2">💻</span> Technical Foundation
-              </h2>
-              
-              {/* Highlight the broad ICT Diploma background */}
-              <p className="text-lg leading-snug text-gray-300 mb-4">
-                My skills are grounded in a **Diploma in ICT from RVTTI**, where I gained hands-on expertise in:
-              </p>
-              
-              <ul className="list-none space-y-3 text-lg text-gray-300">
-                <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">•</span> 
-                    **Software Development:** <span className="text-blue-300">React, JavaScript, Python/Flask, Node.js</span>
-                </li>
-                <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">•</span> 
-                    **Hardware:** <span className="text-blue-300">Component assembly, diagnostics, and maintenance.</span>
-                </li>
-                <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">•</span> 
-                    **Networking:** <span className="text-blue-300">Configuration, troubleshooting, and system connectivity.</span>
-                </li>
-                <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">•</span> 
-                    **Databases:** <span className="text-yellow-300">SQLite, MongoDB</span>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Experience */}
-            <div className="p-6 bg-gray-700/50 rounded-lg shadow-inner border border-gray-600">
-              <h2 className="text-2xl font-bold text-cyan-400 mb-4 flex items-center">
-                <span role="img" aria-label="lightbulb" className="text-3xl mr-2">💡</span> Professional Experience
-              </h2>
-              <p className="text-lg leading-relaxed text-gray-300">
-                I've applied my skills as an **attaché at Kibabii University** and focused on rapid personal growth:
-              </p>
-              <ul className="list-none space-y-3 text-lg text-gray-300 mt-4">
-                  <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">✔</span> 
-                    **Real-World Application:** Honed technical skills and troubleshooting in a structured environment.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">✔</span> 
-                    **Back-End Mastery:** Actively developing complex APIs using my Python/Flask stack.
-                  </li>
-              </ul>
-            </div>
+  return (
+    <section className="min-h-screen bg-gray-50 text-gray-800 py-20 px-8">
+      <div className="max-w-5xl mx-auto">
 
-            {/* Soft Skills */}
-            <div className="p-6 bg-gray-700/50 rounded-lg shadow-inner border border-gray-600">
-              <h2 className="text-2xl font-bold text-cyan-400 mb-4 flex items-center">
-                <span role="img" aria-label="rocket" className="text-3xl mr-2">🚀</span> Soft Skills & Mindset
-              </h2>
-              <p className="text-lg leading-relaxed text-gray-300">
-                Certified by the **African Management Institute**, I bring robust professional skills:
-              </p>
-              <ul className="list-none space-y-3 text-lg text-gray-300 mt-4">
-                  <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">💬</span> 
-                    **Communication:** Clear, effective team and stakeholder interaction.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">🤝</span> 
-                    **Teamwork & Leadership:** Proven ability to collaborate and take initiative.
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-400 mr-2 mt-1">🧠</span> 
-                    **Self-Driven:** High productivity and commitment to continuous learning.
-                  </li>
-              </ul>
-            </div>
-          </div> {/* End of Grid */}
-          
-          <hr className="my-10 border-gray-700/50" />
-
-          {/* Call to Action: More dominant and inviting */}
-          <div className="text-center">
-            <h3 className="text-4xl font-bold text-blue-300 mb-4">
-              Ready to Contribute from Day One.
-            </h3>
-            <p className="text-xl leading-relaxed text-gray-400 mb-8 max-w-2xl mx-auto">
-              I am actively seeking an **internship or junior developer role** to transition my training into impactful development work. 
-            </p>
-            
-            <a 
-              href="/contact" 
-              className="inline-block px-12 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-extrabold text-xl rounded-full shadow-2xl shadow-blue-500/50 hover:from-blue-600 hover:to-cyan-600 hover:scale-[1.03] transition-all duration-300 transform"
-            >
-              📩 Connect with Elvis &rarr;
-            </a>
-          </div>
-
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-extrabold text-emerald-700 mb-3">About Me</h1>
+          <div className="w-16 h-1 bg-emerald-500 mx-auto rounded-full mb-4"></div>
+          <p className="text-gray-500 text-lg">Passionate ICT professional crafting digital solutions</p>
         </div>
-      </section>
-    );
+
+        {/* Profile + Intro Card */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-10 flex flex-col md:flex-row gap-8 items-start">
+          {/* Avatar Placeholder */}
+          <div className="flex-shrink-0 flex flex-col items-center gap-2">
+            <div className="w-28 h-28 rounded-full bg-emerald-700 flex items-center justify-center text-white text-4xl font-bold shadow-md">
+              EO
+            </div>
+            <p className="font-semibold text-emerald-700 text-lg">Elvis Otieno</p>
+            <p className="text-gray-400 text-sm">Full Stack Developer</p>
+          </div>
+
+          <div>
+            <p className="text-gray-600 text-lg leading-relaxed mb-4">
+              I'm <strong className="text-gray-900">Elvis Otieno</strong>, a dedicated{" "}
+              <strong className="text-emerald-700">Full-Stack Developer</strong> focused on building
+              efficient, scalable, and responsive web applications. My comprehensive background in{" "}
+              <strong>ICT from RVTTI</strong> and specialized front-end training at{" "}
+              <strong>Moringa School</strong> give me both technical depth and practical expertise.
+            </p>
+            <p className="text-gray-500 text-base leading-relaxed">
+              I specialize in both frontend and backend development, building full-stack applications
+              using{" "}
+              <span className="inline-block bg-emerald-100 text-emerald-800 text-sm font-semibold px-3 py-1 rounded-full">
+                React, JavaScript, Python-Flask, Node.js
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* 3-column skills grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
+
+          {/* Technical Foundation */}
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
+            <h2 className="text-xl font-bold text-emerald-700 mb-4 flex items-center gap-2">
+              <span className="text-2xl">💻</span> Technical Foundation
+            </h2>
+            <p className="text-gray-500 text-sm mb-4">
+              Grounded in a <strong>Diploma in ICT from RVTTI</strong>, with hands-on expertise in:
+            </p>
+            <ul className="space-y-2 text-sm text-gray-600">
+              {[
+                ["Software Dev", "React, JS, Python/Flask, Node.js"],
+                ["Hardware", "Assembly, diagnostics & maintenance"],
+                ["Networking", "Configuration & troubleshooting"],
+                ["Databases", "SQLite, MongoDB, PostgreSQL"],
+              ].map(([label, value]) => (
+                <li key={label} className="flex items-start gap-2">
+                  <span className="text-emerald-500 mt-0.5">▸</span>
+                  <span>
+                    <strong>{label}:</strong> {value}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Experience */}
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
+            <h2 className="text-xl font-bold text-emerald-700 mb-4 flex items-center gap-2">
+              <span className="text-2xl">💡</span> Experience
+            </h2>
+            <p className="text-gray-500 text-sm mb-4">
+              Gained real-world experience as an <strong>attaché at Kibabii University</strong>.
+            </p>
+            <ul className="space-y-2 text-sm text-gray-600">
+              {[
+                "Honed technical skills in a structured environment",
+                "Developing complex APIs using Python/Flask",
+                "Front-end training completed at Moringa School",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="text-emerald-500 mt-0.5">✔</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Soft Skills */}
+          <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
+            <h2 className="text-xl font-bold text-emerald-700 mb-4 flex items-center gap-2">
+              <span className="text-2xl">🚀</span> Soft Skills
+            </h2>
+            <p className="text-gray-500 text-sm mb-4">
+              Certified by the <strong>African Management Institute (AMI)</strong>:
+            </p>
+            <ul className="space-y-2 text-sm text-gray-600">
+              {[
+                ["💬", "Communication", "Clear team & stakeholder interaction"],
+                ["🤝", "Teamwork", "Proven collaboration & leadership"],
+                ["🧠", "Self-Driven", "High productivity & continuous learning"],
+              ].map(([icon, label, desc]) => (
+                <li key={label} className="flex items-start gap-2">
+                  <span>{icon}</span>
+                  <span>
+                    <strong>{label}:</strong> {desc}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Toolkit */}
+        <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6 mb-10">
+          <h3 className="text-lg font-bold text-gray-700 mb-4 text-center">My Toolkit</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {toolkit.map((tool) => (
+              <span
+                key={tool}
+                className="border border-emerald-300 text-emerald-700 bg-emerald-50 px-4 py-1.5 rounded-full text-sm font-medium"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <p className="text-gray-500 text-lg mb-6">
+            I am actively seeking an <strong>internship or junior developer role</strong>.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-emerald-700 text-white px-10 py-3 rounded-full font-bold text-lg hover:bg-emerald-800 transition shadow-md"
+          >
+            📩 Connect with Elvis →
+          </a>
+        </div>
+
+      </div>
+    </section>
+  );
 }
 
 export default About;
