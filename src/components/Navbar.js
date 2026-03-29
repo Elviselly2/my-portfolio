@@ -34,14 +34,15 @@ function Navbar() {
         </div>
 
         {/* CTA */}
-        <a
+        {/* <a
           href="/Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-emerald-700 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-emerald-800 transition duration-200"
         >
           Resume
-        </a>
+        </a> */}
+        <a href={`${process.env.PUBLIC_URL}/resume.pdf`} target="_blank" rel="noreferrer">View CV</a>
       </nav>
     </header>
   );
