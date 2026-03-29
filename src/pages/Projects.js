@@ -18,6 +18,15 @@ function Projects() {
       codeLink: null,
       liveLink: "https://moringa-marketplace-3bpi.vercel.app/",
     },
+     {
+      title: "C&I Interior Decor 🏠",
+      type: "Frontend",
+      status: "Live",
+      desc: "Professional interior design business website with animated hero, portfolio gallery, services showcase, and contact form.",
+      tech: ["React", "Tailwind CSS", "React Router"],
+      codeLink: "https://github.com/Elviselly2/C-I-decor",
+      liveLink: "https://c-i-decor.vercel.app/",
+    },
   ];
 
   const statusColor = {
