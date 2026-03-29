@@ -1,5 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-
 function Navbar() {
   const location = useLocation();
   const links = [
@@ -36,7 +35,7 @@ function Navbar() {
 
         {/* CTA */}
         <a
-          href="https://github.com/Elviselly2"
+          href="/Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-emerald-700 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-emerald-800 transition duration-200"
